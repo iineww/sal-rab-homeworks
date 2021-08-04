@@ -41,6 +41,8 @@ function sendRequest(name, phone, address, goods, sum) {
     goods.shift();
     for (let i = 0; i <= countOfGoods; i += 1) {
         data.goods.push(goods[i]);
+        goods[i].pop();
+        goods[i].shift();
     }
 
     data.order.address = `ул. ${address.street}, дом ${address.house}, ${address.entrance} подъезд, ${address.floor} этаж, кв ${address.flat}`;
